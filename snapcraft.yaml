@@ -1,16 +1,16 @@
-name: [Snap Name] # you probably want to 'snapcraft register <name>'
+name: stream-tune-player # you probably want to 'snapcraft register <name>'
 base: core22 # the base snap is the execution environment for this snap
 version: '1.0.0' # just for humans, typically '1.2+git' or '1.3.2'
-title: [Game Name]
-summary: [Short Summary]
-description: [Description]
+title: StreamTune Media Hub
+summary: Play music and videos from anywhere.
+description: Enjoy your favorite audio and video files with advanced equalizer, playlist support, and streaming capabilities all in one smooth interface.
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 
 apps:
-  [Snap Name]:
-    command: bin/[Snap Name]-bin
+  stream-tune-player:
+    command: bin/stream-tune-player-bin
     extensions: [gnome]
     plugs:
       - network
@@ -22,8 +22,8 @@ layout:
     bind: $SNAP/gnome-platform/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0
 
 parts:
-  [Snap Name]:
+  stream-tune-player:
     plugin: dump
     source: .
     organize:
-      [Snap Name]-bin: bin/
+      stream-tune-player-bin: bin/
